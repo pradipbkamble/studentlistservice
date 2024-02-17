@@ -1,0 +1,24 @@
+<table class="table table-bordered" *ngIf="stdarray.length>0">
+
+    <thead>
+        <tr>
+            <th>sr num</th>
+            <th>name</th>
+            <th>lname</th>
+            <th>email</th>
+            <th>contact</th>
+            <th>button</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="bg-secondary text-white" *ngFor=" let std of stdarray ;let i=index">
+            <td>{{i+1}}</td>
+            <td>{{std.stdname}}</td>
+            <td>{{std.stdlname}}</td>
+            <td>{{std.email}}</td>
+            <td>{{std.contact}}</td>
+            <td><button class="btn btn-danger" (click)="ondelet(std.id)">delet</button></td>
+        </tr>
+    </tbody>
+</table>
+<p *ngIf="stdarray.length==0" class="alert alert-info">no std is added in !!!</p>
